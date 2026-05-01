@@ -1,0 +1,11 @@
+{
+  "name": "comensales-lista",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "serve dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
