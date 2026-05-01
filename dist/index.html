@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comensales - Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white text-center">
+        <h2>Gestión de Comensales (UCLA DCyT)</h2>
+      </div>
+      <div class="card-body">
+        <button class="btn btn-success mb-4" id="body_btNuevoComensal">+ Nuevo Comensal</button>
+        
+        <div class="row text-center">
+          <div class="col-md-6 mb-3">
+            <div class="p-3 border bg-white rounded">
+              <h6>Monto Total Recaudado</h6>
+              <h3 id="body_lblMontoTotal" class="text-success">$0.00</h3>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="p-3 border bg-white rounded">
+              <h6>% Con Descuento (3ra Edad)</h6>
+              <h3 id="body_lblPorcDescuento" class="text-info">0.00%</h3>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="p-3 border bg-white rounded">
+              <h6>Total Descuento</h6>
+              <h3 id="body_lblDescuento" class="text-info">0.00</h3>
+            </div>
+          </div>
+        </div>
+
+<h5 class="mt-4">Listado de Comensales:</h5>
+<div class="table-responsive border rounded bg-white mb-4">
+  <table class="table table-hover align-middle mb-0">
+    <thead class="table-light">
+      <tr>
+        <th>Cédula</th>
+        <th>Nombre Completo</th>
+        <th class="text-center">Sexo</th> <th class="text-center">Edad</th> <th class="text-center">Turno</th>  <th class="text-end">Costo Base</th> <th class="text-end">Descuento</th>  <th class="text-end">Paga</th>
+  </tr>
+    </thead>
+    <tbody id="body_tablaComensales">
+      </tbody>
+  </table>
+</div>
+
+        <h5 class="mt-3">Promedio de Edad:</h5>
+        <div class="row text-center border-top pt-3">
+          <div class="col-12"><small>Edad Promedio:</small><br><b id="body_lblPromedioEdad">0%</b></div>
+        </div>
+
+        <h5 class="mt-3">Distribución por Turnos:</h5>
+        <div class="row text-center border-top pt-3">
+          <div class="col-4"><small>Desayuno:</small><br><b id="body_lblPorcDesayuno">0%</b></div>
+          <div class="col-4"><small>Almuerzo:</small><br><b id="body_lblPorcAlmuerzo">0%</b></div>
+          <div class="col-4"><small>Ambos:</small><br><b id="body_lblPorcAmbos">0%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalComensal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white"><h5 class="modal-title">Registrar Comensal</h5></div>
+        <div class="modal-body">
+          <input type="text" id="comensal_inNombre" class="form-control mb-2" placeholder="Nombre">
+          <input type="text" id="comensal_inApellido" class="form-control mb-2" placeholder="Apellido">
+          <input type="text" id="comensal_inCedula" class="form-control mb-2" placeholder="Cédula">
+          <select id="comensal_inSexo" class="form-select mb-2">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+          </select>
+          <label class="small text-muted">Fecha de Nacimiento:</label>
+          <input type="date" id="comensal_inFechaNac" class="form-control mb-2">
+          <select id="comensal_inTurno" class="form-select mb-2">
+            <option value="1">Desayuno ($5)</option>
+            <option value="2">Almuerzo ($7)</option>
+            <option value="3">Ambos ($10)</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" id="comensal_btCancelar">Cancelar</button>
+          <button class="btn btn-primary" id="comensal_btAceptar">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
